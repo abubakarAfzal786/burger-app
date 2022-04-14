@@ -15,6 +15,6 @@ class ProductRepository extends Repository
   }
   public function fetchAll()
   {
-    return ProductResource::collection(Product::with(['ingredients', 'ingredients.stock'])->whereHas('ingredients')->get());
+    return ProductResource::collection(Product::with('ingredients')->whereHas('ingredients')->get());
   }
 }
