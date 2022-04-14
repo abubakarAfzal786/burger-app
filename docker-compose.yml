@@ -1,0 +1,38 @@
+version: "3.1"
+services:
+  php7:
+    build:
+      context: backend_api/docker/apache_php
+    container_name: burger_api
+    #    depends_on:
+    #      - db
+    ports:
+      - "91:80"
+    volumes:
+      - ./backend_api:/var/www/html:z
+      - ~/.composer/auth.json:/root/.composer/auth.json
+  db:
+    build:
+      context: backend_api/docker/db
+    container_name: burger_db
+    env_file:
+      - ./backend_api/.env
+    ports:
+      - "3307:3306"
+  phpmyadmin:
+    depends_on:
+      - db
+    container_name: burger_admin_panel
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+  vue_app:
+    #    depends_on:
+    #      - php7
+    build:
+      context: vue_app
+    container_name: burger_app
+    ports:
+      - "81:3000"
+    environment:
+      - NODE_ENV=production

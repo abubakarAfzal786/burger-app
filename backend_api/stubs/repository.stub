@@ -1,0 +1,12 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\Repository\Repository;
+
+class DummyClass extends Repository
+{
+    function getModelClassName() {
+        //return Model::class;
+    }
+}
