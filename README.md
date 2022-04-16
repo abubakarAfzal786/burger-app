@@ -1,6 +1,6 @@
 # Burger App
 
-This application is a web api based application built on <a href="https://laravel.com/docs/8.x">Laravel 8</a> and <a href="https://vuejs.org/">Vue 3</a>. To run this project on your local
+This application is a web api based application built on <a href="https://laravel.com/docs/8.x">Laravel 8</a> and <a href="https://vuejs.org/">Vue 2</a>. To run this project on your local
 
 ## Setup using Docker
 
